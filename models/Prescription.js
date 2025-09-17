@@ -1,0 +1,33 @@
+import { mongoose } from "mongoose";
+
+const schema = mongoose.schema;
+
+const prescriptionSchema = new schema({
+  date: {
+    type: Date,
+    required: [true, "Date of Prescription is required."],
+  },
+  appointmetId: {
+    type: String,
+    required: [true, "Appointment ID is required."],
+  },
+  medicine: {
+    type: String,
+    required: [true, "Medicine is required."],
+  },
+  dosage: {
+    type: String,
+    required: [true, "dosage is required."],
+  },
+  instructions: {
+    type: String,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+const prescription = mongoose.model("Prescription", prescriptionSchema);
+
+export default prescription;
