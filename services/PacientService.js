@@ -1,4 +1,4 @@
-import PacientRepository from "../repository/PacientRepository";
+import PacientRepository from "../repository/PacientRepository.js";
 
 const getAllPacients = async () => {
   return PacientRepository.getAllPacients();
@@ -18,7 +18,12 @@ const savePacient = async ({ name, birthDate, email, phone }) => {
 };
 
 const updatePacient = async (id, { name, birthDate, email, phone }) => {
-  return PacientRepository.savePacient(id, { name, birthDate, email, phone });
+  return PacientRepository.updatePacient(id, {
+    name,
+    birthDate,
+    email,
+    phone,
+  });
 };
 
 const deletePacient = async (id) => {

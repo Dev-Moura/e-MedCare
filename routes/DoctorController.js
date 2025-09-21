@@ -1,5 +1,6 @@
 import express from "express";
-import DoctorService from "../services/DoctorService";
+import bcrypt from "bcrypt";
+import DoctorService from "../services/DoctorService.js";
 
 let router = express.Router();
 
@@ -29,7 +30,7 @@ router.post("/postDoctor", async (req, res) => {
     name,
     login,
     password,
-    medicalSpecialty,
+    medicalSpeciality,
     medicalRegistration,
     email,
     phone,
@@ -40,7 +41,7 @@ router.post("/postDoctor", async (req, res) => {
       name,
       login,
       password: hashedPassword,
-      medicalSpecialty,
+      medicalSpeciality,
       medicalRegistration,
       email,
       phone,
@@ -52,13 +53,13 @@ router.post("/postDoctor", async (req, res) => {
   }
 });
 
-router.put("/doctors/:id", async (req, res) => {
+router.put("/Doctors/:id", async (req, res) => {
   const { id } = req.params;
   const {
     name,
     login,
     password,
-    medicalSpecialty,
+    medicalSpeciality,
     medicalRegistration,
     email,
     phone,
@@ -68,19 +69,19 @@ router.put("/doctors/:id", async (req, res) => {
       name,
       login,
       password,
-      medicalSpecialty,
+      medicalSpeciality,
       medicalRegistration,
       email,
       phone,
     });
-    res.send(doctor);
+    res.status(201).send(doctor);
   } catch (e) {
     console.log(e);
     res.status(500).send(e);
   }
 });
 
-router.delete("/doctors/:id", async (req, res) => {
+router.delete("/Doctors/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const doctor = await DoctorService.deleteDoctor(id);
@@ -91,4 +92,4 @@ router.delete("/doctors/:id", async (req, res) => {
   }
 });
 
-export default router();
+export default router;

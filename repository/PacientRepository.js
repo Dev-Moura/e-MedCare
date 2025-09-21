@@ -1,4 +1,4 @@
-import { Pacient } from "../models/Pacient.js";
+import Pacient from "../models/Pacient.js";
 
 const getAllPacients = async () => {
   return await Pacient.find();
@@ -47,7 +47,7 @@ const updatePacient = async (id, { name, birthDate, email, phone }) => {
 
 const deletePacient = async (id) => {
   try {
-    return await Pacient.findByIdAndUpdate(id);
+    return await Pacient.findByIdAndDelete(id);
   } catch (e) {
     throw new Error(e);
   }

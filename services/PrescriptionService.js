@@ -1,4 +1,4 @@
-import PrescriptionRepository from "../repository/PrescriptionRepository";
+import PrescriptionRepository from "../repository/PrescriptionRepository.js";
 
 const getAllPrescriptions = async () => {
   return PrescriptionRepository.getAllPrescriptions();
@@ -28,7 +28,7 @@ const updatePrescription = async (
   id,
   { date, appointmetId, medicine, dosage, instructions }
 ) => {
-  return PrescriptionRepository.savePrescription(id, {
+  return PrescriptionRepository.updatePrescription(id, {
     date,
     appointmetId,
     medicine,
@@ -47,7 +47,6 @@ const prescriptionService = {
   savePrescription,
   updatePrescription,
   deletePrescription,
-  s,
 };
 
 export default prescriptionService;

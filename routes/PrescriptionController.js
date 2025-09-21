@@ -1,5 +1,5 @@
-import { express } from "express";
-import PrescriptionService from "../services/PrescriptionService";
+import express from "express";
+import PrescriptionService from "../services/PrescriptionService.js";
 
 let router = express.Router();
 
@@ -27,7 +27,7 @@ router.get("/getPrescription/:id", async (req, res) => {
 router.post("/postPrescription", async (req, res) => {
   const { date, appointmetId, medicine, dosage, instructions } = req.body;
   try {
-    const prescription = await prescriptionService.savePrescription({
+    const prescription = await PrescriptionService.savePrescription({
       date,
       appointmetId,
       medicine,
@@ -52,8 +52,9 @@ router.put("/prescriptions/:id", async (req, res) => {
       dosage,
       instructions,
     });
-    res.send(prescription);
+    res.status(201).send(prescription);
   } catch (e) {
+    s;
     console.log(e);
     res.status(500).send(e);
   }
@@ -62,7 +63,7 @@ router.put("/prescriptions/:id", async (req, res) => {
 router.delete("/prescriptions/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const prescription = await pacientService.deletePacient(id);
+    const prescription = await PrescriptionService.deletePrescription(id);
     res.send(prescription);
   } catch (e) {
     console.log(e);
@@ -70,4 +71,4 @@ router.delete("/prescriptions/:id", async (req, res) => {
   }
 });
 
-export default router();
+export default router;

@@ -1,6 +1,6 @@
-import { Appointment } from "../models/Appointment.js";
+import Appointment from "../models/Appointment.js";
 
-const getAllAppoitments = async () => {
+const getAllAppointments = async () => {
   return await Appointment.find();
 };
 
@@ -39,14 +39,14 @@ const updateAppointment = async (id, { date, doctorId, pacientId }) => {
 
 const deleteAppointment = async (id) => {
   try {
-    return await Appointment.findByIdAndUpdate(id);
+    return await Appointment.findByIdAndDelete(id);
   } catch (e) {
     throw new Error(e);
   }
 };
 
 const appointmentRepository = {
-  getAllAppoitments,
+  getAllAppointments,
   getAppointment,
   saveAppointment,
   updateAppointment,

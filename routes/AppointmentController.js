@@ -1,9 +1,9 @@
-import { express } from "express";
-import AppointmentService from "../services/AppointmentService";
+import express from "express";
+import AppointmentService from "../services/AppointmentService.js";
 
 let router = express.Router();
 
-router.get("/appointments", async (req, res) => {
+router.get("/Appointments", async (req, res) => {
   try {
     const appointments = await AppointmentService.getAllAppointments();
     res.send(appointments);
@@ -41,7 +41,7 @@ router.post("/postAppointment", async (req, res) => {
   }
 });
 
-router.put("/appointments/:id", async (req, res) => {
+router.put("/Appointment/:id", async (req, res) => {
   const { id } = req.params;
   const { date, doctorId, pacientId } = req.body;
 
@@ -51,14 +51,14 @@ router.put("/appointments/:id", async (req, res) => {
       doctorId,
       pacientId,
     });
-    res.send(appointment);
+    res.status(201).send(appointment);
   } catch (e) {
     console.log(e);
     res.status(500).send(e);
   }
 });
 
-router.delete("/appointments/:id", async (req, res) => {
+router.delete("/Appointment/:id", async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -70,4 +70,4 @@ router.delete("/appointments/:id", async (req, res) => {
   }
 });
 
-export default router();
+export default router;

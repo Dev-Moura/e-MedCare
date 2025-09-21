@@ -1,12 +1,8 @@
-import { mongoose } from "mongoose";
+import mongoose from "mongoose";
 
-const schema = mongoose.schema;
+const { Schema } = mongoose;
 
-const doctorSchema = new schema({
-  doctorId: {
-    type: String,
-    required: [true, "DoctorId Date is required."],
-  },
+const doctorSchema = new Schema({
   name: {
     type: String,
     required: [true, "Doctor name is required."],
@@ -20,9 +16,9 @@ const doctorSchema = new schema({
     type: String,
     required: [true, "Password is required."],
   },
-  medicalSpecialty: {
+  medicalSpeciality: {
     type: String,
-    required: [true, "Medical Specialty is required."],
+    required: [true, "Medical Speciality is required."],
   },
   medicalRegistration: {
     type: String,
@@ -31,11 +27,11 @@ const doctorSchema = new schema({
   },
   email: {
     type: String,
-    required: [true, "Email contact is required"],
+    required: [true, "Email contact is required."],
   },
   phone: {
     type: String,
-    required: [true, "Phone number is required"],
+    required: [true, "Phone number is required."],
   },
   createdAt: {
     type: Date,

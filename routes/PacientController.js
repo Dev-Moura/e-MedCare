@@ -50,7 +50,7 @@ router.put("/pacients/:id", async (req, res) => {
       email,
       phone,
     });
-    res.send(pacient);
+    res.status(201).send(pacient);
   } catch (e) {
     console.log(e);
     res.status(500).send(e);
@@ -61,11 +61,11 @@ router.delete("/pacients/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const pacient = await PacientService.deletePacient(id);
-    res.send(pacient);
+    res.status(201).send(pacient);
   } catch (e) {
     console.log(e);
     res.status(500).send(e);
   }
 });
 
-export default router();
+export default router;

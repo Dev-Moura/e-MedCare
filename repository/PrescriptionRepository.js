@@ -1,4 +1,4 @@
-import { Prescription } from "../models/Prescription.js";
+import Prescription from "../models/Prescription.js";
 
 const getAllPrescriptions = async () => {
   return await Prescription.find();
@@ -58,7 +58,7 @@ const updatePrescription = async (
 
 const deletePrescription = async (id) => {
   try {
-    return await Prescription.findByIdAndUpdate(id);
+    return await Prescription.findByIdAndDelete(id);
   } catch (e) {
     throw new Error(e);
   }

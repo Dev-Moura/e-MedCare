@@ -1,8 +1,8 @@
 import express from "express";
-import { appointmentController } from "./AppointmentController";
-import { doctorController } from "./DoctorController";
-import { pacientController } from "./PacientController";
-import { prescriptionController } from "./PrescriptionController";
+import AppointmentController from "./AppointmentController.js";
+import DoctorController from "./DoctorController.js";
+import PacientController from "./PacientController.js";
+import PrescriptionController from "./PrescriptionController.js";
 
 let router = express.Router();
 
@@ -11,9 +11,9 @@ router.get("/", function (req, res) {
   res.status(200).json({ message: "hi!" });
 });
 
-router.use("/", appointmentController); // vai usar a "/" para navegar entre as pastas
-router.use("/", doctorController);
-router.use("/", pacientController);
-router.use("/", prescriptionController);
+router.use("/", AppointmentController); // vai usar a "/" para navegar entre as pastas
+router.use("/", DoctorController);
+router.use("/", PacientController);
+router.use("/", PrescriptionController);
 
 export default router;

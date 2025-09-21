@@ -1,8 +1,8 @@
-import { mongoose } from "mongoose";
+import mongoose from "mongoose";
 
-const schema = mongoose.schema;
+const { Schema } = mongoose;
 
-const appointmentSchema = new schema({
+const appointmentSchema = new Schema({
   date: {
     type: Date,
     required: [true, "Appointment Date is required."],

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-mongoose.connect("mongodb://localhost:27017/ConsultorioMedico");
+mongoose.connect("mongodb://localhost:27017/eMedCare");
 
 const db = mongoose.connection;
 
