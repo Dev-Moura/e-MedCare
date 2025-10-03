@@ -1,6 +1,8 @@
 import express from "express";
 import PrescriptionService from "../services/PrescriptionService.js";
 import multer from "multer";
+import process from "process";
+import path from "path";
 
 let router = express.Router();
 
@@ -33,6 +35,18 @@ router.post(
     }
   }
 );
+
+router.get("/readPrescription/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const prescription = await PrescriptionService.getPrescription(id);
+    let filePath = path.resolve(process.cwd() + "/../" + prescription.file);
+    res.status(200).sendFile(filePath);
+  } catch (e) {
+    console.error(e);
+    res.status(500).send(e);
+  }
+});
 
 router.get("/prescriptions", async (req, res) => {
   try {
