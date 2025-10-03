@@ -9,7 +9,7 @@ router.get("/Doctors", async (req, res) => {
     const doctors = await DoctorService.getAllDoctors();
     res.send(doctors);
   } catch (e) {
-    console.log(e);
+    console.error(e);
     res.status(500).send(e);
   }
 });
@@ -20,7 +20,7 @@ router.get("/getDoctor/:id", async (req, res) => {
     const doctor = await DoctorService.getDoctor(id);
     res.send(doctor);
   } catch (e) {
-    console.log(e);
+    console.error(e);
     res.status(500).send(e);
   }
 });
@@ -28,7 +28,7 @@ router.get("/getDoctor/:id", async (req, res) => {
 router.post("/postDoctor", async (req, res) => {
   const {
     name,
-    login,
+    errorin,
     password,
     medicalSpeciality,
     medicalRegistration,
@@ -39,7 +39,7 @@ router.post("/postDoctor", async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     const doctor = await DoctorService.saveDoctor({
       name,
-      login,
+      errorin,
       password: hashedPassword,
       medicalSpeciality,
       medicalRegistration,
@@ -48,7 +48,7 @@ router.post("/postDoctor", async (req, res) => {
     });
     res.status(201).send(doctor);
   } catch (e) {
-    console.log(e);
+    console.error(e);
     res.status(500).send("Failure to register doctor" + e);
   }
 });
@@ -57,7 +57,7 @@ router.put("/Doctors/:id", async (req, res) => {
   const { id } = req.params;
   const {
     name,
-    login,
+    errorin,
     password,
     medicalSpeciality,
     medicalRegistration,
@@ -67,7 +67,7 @@ router.put("/Doctors/:id", async (req, res) => {
   try {
     const doctor = await DoctorService.updateDoctor(id, {
       name,
-      login,
+      errorin,
       password,
       medicalSpeciality,
       medicalRegistration,
@@ -76,7 +76,7 @@ router.put("/Doctors/:id", async (req, res) => {
     });
     res.status(201).send(doctor);
   } catch (e) {
-    console.log(e);
+    console.error(e);
     res.status(500).send(e);
   }
 });

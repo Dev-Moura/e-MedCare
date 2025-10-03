@@ -8,7 +8,7 @@ router.get("/pacients", async (req, res) => {
     const pacients = await PacientService.getAllPacients();
     res.send(pacients);
   } catch (e) {
-    console.log(e);
+    console.error(e);
     res.status(500).send(e);
   }
 });
@@ -19,7 +19,7 @@ router.get("/getPacient/:id", async (req, res) => {
     const pacient = await PacientService.getPacient(id);
     res.send(pacient);
   } catch (e) {
-    console.log(e);
+    console.error(e);
     res.status(500).send(e);
   }
 });
@@ -35,7 +35,7 @@ router.post("/postPacient", async (req, res) => {
     });
     res.status(201).send(pacient);
   } catch (e) {
-    console.log(e);
+    console.error(e);
     res.status(500).send("Failure to register patient" + e);
   }
 });
@@ -52,7 +52,7 @@ router.put("/pacients/:id", async (req, res) => {
     });
     res.status(201).send(pacient);
   } catch (e) {
-    console.log(e);
+    console.error(e);
     res.status(500).send(e);
   }
 });
@@ -63,7 +63,7 @@ router.delete("/pacients/:id", async (req, res) => {
     const pacient = await PacientService.deletePacient(id);
     res.status(201).send(pacient);
   } catch (e) {
-    console.log(e);
+    console.error(e);
     res.status(500).send(e);
   }
 });

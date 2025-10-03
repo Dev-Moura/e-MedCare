@@ -1,11 +1,13 @@
 import express from "express";
 import AppointmentController from "./AppointmentController.js";
-import DoctorController from "./DoctorController.js";
-import PacientController from "./PacientController.js";
 import PrescriptionController from "./PrescriptionController.js";
-import doctorService from "../services/DoctorService.js";
-import bcrypt from "bcrypt";
 import verifyToken from "../middleware/authMiddleware.js";
+import doctorService from "../services/DoctorService.js";
+import PacientController from "./PacientController.js";
+import DoctorController from "./DoctorController.js";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
+
 let router = express.Router();
 
 router.get("/", function (req, res) {
@@ -24,7 +26,7 @@ router.post("/login", async (req, res) => {
     }
 
     const passwordMatch = await bcrypt.compare(password, doctor.password);
-    if (!password) {
+    if (!passwordMatch) {
       return res.status(401).json({ error: "Authentication failed!" });
     }
 
