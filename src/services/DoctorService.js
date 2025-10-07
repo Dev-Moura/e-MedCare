@@ -12,7 +12,7 @@ const saveDoctor = async ({
   name,
   login,
   password,
-  medicalSpeciality,
+  medicalSpecialty,
   medicalRegistration,
   email,
   phone,
@@ -21,7 +21,7 @@ const saveDoctor = async ({
     name,
     login,
     password,
-    medicalSpeciality,
+    medicalSpecialty,
     medicalRegistration,
     email,
     phone,
@@ -30,21 +30,13 @@ const saveDoctor = async ({
 
 const updateDoctor = async (
   id,
-  {
-    name,
-    login,
-    password,
-    medicalSpeciality,
-    medicalRegistration,
-    email,
-    phone,
-  }
+  { name, login, password, medicalSpecialty, medicalRegistration, email, phone }
 ) => {
   return DoctorRepository.updateDoctor(id, {
     name,
     login,
     password,
-    medicalSpeciality,
+    medicalSpecialty,
     medicalRegistration,
     email,
     phone,
