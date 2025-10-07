@@ -25,7 +25,7 @@ const doctorSchema = new Schema({
         `${msg.value} Your password required. Following the exemple: J34@abc5.`,
     },
   },
-  medicalSpeciality: {
+  medicalSpecialty: {
     type: String,
     required: [true, "Medical Speciality is required."],
   },

@@ -16,7 +16,7 @@ const saveDoctor = async ({
   name,
   login,
   password,
-  medicalSpeciality,
+  medicalSpecialty,
   medicalRegistration,
   email,
   phone,
@@ -26,7 +26,7 @@ const saveDoctor = async ({
       name,
       login,
       password,
-      medicalSpeciality,
+      medicalSpecialty,
       medicalRegistration,
       email,
       phone,
@@ -39,15 +39,7 @@ const saveDoctor = async ({
 
 const updateDoctor = async (
   id,
-  {
-    name,
-    login,
-    password,
-    medicalSpeciality,
-    medicalRegistration,
-    email,
-    phone,
-  }
+  { name, login, password, medicalSpecialty, medicalRegistration, email, phone }
 ) => {
   try {
     return await Doctor.findByIdAndUpdate(
@@ -56,7 +48,7 @@ const updateDoctor = async (
         name,
         login,
         password,
-        medicalSpeciality,
+        medicalSpecialty,
         medicalRegistration,
         email,
         phone,
