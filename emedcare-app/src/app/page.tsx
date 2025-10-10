@@ -12,24 +12,24 @@ export default function Home() {
   const authenticantion = async (e: any) => {
     e.preventDefault();
     setError(null);
-
+    // validação de login e senha
     if (login != "" && password != "") {
       const formData = {
         login: login,
         password: password,
       };
-
+      // chamada do back-end
       const add = await fetch("http://localhost:3001/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
+      // cria um .json do conteudo da chamada
       const content = await add.json();
-
+      // se o token existir
       if (content.token) {
-        sessionStorage.setItem("token", content.token); // simplementação simplista do jwt
-        router.push("/home");
+        sessionStorage.setItem("token", content.token); // implementação simplista do jwt
+        router.push("/home"); // se ele o token existir encaminha o usuario pra home
       } else {
         setError(content.error);
       }
