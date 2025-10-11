@@ -17,6 +17,8 @@ export default function Home() {
         <Link href="/prescription/create">Create new Prescription</Link>
         <br />
         <Link href="/prescription/upload">upload Prescription</Link>
+        <br />
+        <Link href="/api">Acess FakeApi</Link>
       </div>
     </>
   );
