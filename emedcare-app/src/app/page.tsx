@@ -29,7 +29,7 @@ export default function Home() {
       // se o token existir
       if (content.token) {
         sessionStorage.setItem("token", content.token); // implementação simplista do jwt
-        router.push("/home"); // se ele o token existir encaminha o usuario pra home
+        router.push("/home"); // se o token existir encaminha o usuario pra home
       } else {
         setError(content.error);
       }
@@ -38,50 +38,54 @@ export default function Home() {
 
   return (
     <>
+    <main>
       <div>
-        <form className="w-full" onSubmit={authenticantion}>
-          <span className="font-bold-text-blue-500 py-2 block text-2x1">
-            Login
-          </span>
-          <div className="w-full py-2">
-            <label htmlFor="" className="text-sm font-bold py-2 block">
-              Usuário
-            </label>
-            <input
-              type="text"
-              name="name"
-              className="w-full border-[1px] border-gray-200 p-2 rounded-sm"
-              onChange={(e: any) => setLogin(e.target.value)}
-            />
-          </div>
-          <div className="w-full py-2">
-            <label htmlFor="" className="text-sm font-bold py-2 block">
-              Senha
-            </label>
-            <input
-              name="login"
-              type="password"
-              className="w-full border-[1px] border-gray-200 p-2 rounded-sm"
-              onChange={(e: any) => setPassword(e.target.value)}
-            />
-          </div>
-          <div className="w-full py-2">
-            <button className="w-20 p-2 text-#f2f2f2 border-gray-200 border-[1px] rounded-sm bg-blue-400">
+        <section>
+          <form className="w-full" onSubmit={authenticantion}>
+            <h1 className="font-bold-text-blue-500 py-2 block text-2x1">
               Login
-            </button>
-          </div>
-          <div>
-            {error && (
-              <div
-                className="p-2 text-white border-gray-200 border-[1px] rounded-sm bg-red-400"
-                style={{ color: "red" }}
-              >
-                {error}
-              </div>
-            )}
-          </div>
-        </form>
-      </div>
+            </h1>
+            <div className="w-full py-2">
+              <label htmlFor="" className="text-sm font-bold py-2 block">
+                Usuário
+              </label>
+              <input
+                type="text"
+                name="name"
+                className="w-full border-[1px] border-gray-200 p-2 rounded-sm"
+                onChange={(e: any) => setLogin(e.target.value)}
+              />
+            </div>
+            <div className="w-full py-2">
+              <label htmlFor="" className="text-sm font-bold py-2 block">
+                Senha
+              </label>
+              <input
+                name="login"
+                type="password"
+                className="w-full border-[1px] border-gray-200 p-2 rounded-sm"
+                onChange={(e: any) => setPassword(e.target.value)}
+              />
+            </div>
+            <div className="w-full py-2">
+              <button className="w-20 p-2 text-#f2f2f2 border-gray-200 border-[1px] rounded-sm bg-blue-400">
+                Login
+              </button>
+            </div>
+            <div>
+              {error && (
+                <div
+                  className="p-2 text-white border-gray-200 border-[1px] rounded-sm bg-red-400"
+                  style={{ color: "red" }}
+                >
+                  {error}
+                </div>
+              )}
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
     </>
   );
 }
