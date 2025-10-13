@@ -96,7 +96,7 @@ export default function PrescriptionCreate() {
             prescription.map((prescription: any) => (
               <tr key={prescription.id}>
                 <td className="border border-slate-300">{prescription.date}</td>
-                <td className="border border-slate-300 text-center">
+                <td className="border border-slate-f300 text-center">
                   {prescription.medicine}
                 </td>
                 <td className="border border-slate-300 text-center">
