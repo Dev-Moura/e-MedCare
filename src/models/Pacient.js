@@ -13,11 +13,11 @@ const pacientSchema = new Schema({
   },
   email: {
     type: String,
-    required: [true, "Email contact is required"],
+    required: [true, "Email is required."],
   },
   phone: {
     type: String,
-    required: [true, "Phone number is required"],
+    required: [true, "Phone number is required."],
   },
   createdAt: {
     type: Date,
