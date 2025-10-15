@@ -1,6 +1,6 @@
 # e‑MedCare
 
-> Projeto de consultório médico utilizando **Node.js**, **Express**, **Next.js e **MongoDB\*\*
+> Projeto de consultório médico utilizando **Node.js**, **Express**, **Next.js** e **MongoDB**
 
 ---
 
