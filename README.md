@@ -89,7 +89,9 @@ O **e‑MedCare** é uma aplicação para gerenciar um consultório médico, inc
    npm run dev
    ```
 
-5. Acesse no navegador: `http://localhost:3000` front
+5. Acesse no navegador: `http://localhost:3000` front-end
+
+6. Acesse no navegador: `http://localhost:3001` back-end
 
 ---
 
@@ -100,7 +102,6 @@ O **e‑MedCare** é uma aplicação para gerenciar um consultório médico, inc
 | `PORT`        | Porta em que o servidor vai rodar     | `3000`                               |
 | `MONGODB_URI` | URI de conexão com MongoDB            | `mongodb://localhost:27017/emedcare` |
 | `JWT_SECRET`  | Segredo para assinatura de tokens JWT | `algumSegredoMuitoSecreto`           |
-| `EMAIL_HOST`  | Host SMTP para envio de e-mails       | `smtp.exemplo.com`                   |
 | `EMAIL_USER`  | Usuário do e-mail                     | `usuario@exemplo.com`                |
 | `EMAIL_PASS`  | Senha do e-mail                       | `senha-do-email`                     |
 
