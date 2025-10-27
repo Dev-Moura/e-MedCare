@@ -38,8 +38,11 @@ export default function Home() {
 
   return (
     <>
-      <div>
-        <form className="w-full" onSubmit={authenticantion}>
+      <div className=" flex justify-center items-center h-screen bg-gray-350 ">
+        <form
+          className="w-full max-w-sm p-10 bg-white rounded-lg shadow-md "
+          onSubmit={authenticantion}
+        >
           <h1 className="font-bold-text-blue-500 py-2 block text-2x1">Login</h1>
           <div className="w-full py-2">
             <label htmlFor="" className="text-sm font-bold py-2 block">
@@ -48,7 +51,7 @@ export default function Home() {
             <input
               type="text"
               name="name"
-              className="w-full border-[1px] border-gray-200 p-2 rounded-sm"
+              className="w-full border-1 border-gray-200 p-2 rounded-sm"
               onChange={(e: any) => setLogin(e.target.value)}
             />
           </div>
