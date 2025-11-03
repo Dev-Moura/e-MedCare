@@ -42,7 +42,7 @@ const doctorSchema = new Schema({
         return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(
           v
         );
-      },
+      },  
       message: (msg) =>
         `${msg.value} This is not a valid e-mail value. Please try again.`,
     },

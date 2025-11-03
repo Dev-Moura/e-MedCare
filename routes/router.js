@@ -38,6 +38,23 @@ router.post("/login", async (req, res) => {
     res.status(500).json({ error: "login failed" });
   }
 });
+
+//mapear recuperação de senha
+
+router.get("/forgetPassword", async (req, res) => {
+  try {
+    const {email} = req.body;
+    const doctor = await doctorService.getDoctor(email);
+
+    if(!doctor) {
+      return res.status(401).json({error: "email not found"})
+    }
+  } catch (e) {
+    console.log(e);
+    res.status(500).json({ error: "e-mail failed"})
+  } 
+});
+
 router.use("/", verifyToken, AppointmentController); // vai usar a "/" para navegar entre as pastas
 router.use("/", verifyToken, DoctorController);
 router.use("/", verifyToken, PacientController);
