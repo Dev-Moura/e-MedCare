@@ -41,8 +41,8 @@ export default function Home() {
   return (
     <>
     <div className="min-h-screen flex flex-col">
-        <header className= " w-full h-12 bg-white" >
-        <h1 className= "ml-2 font-bold text-4xl text-green-500 p-2 ">MedCare</h1>
+        <header className= "w-full h-14 bg-white" >
+          <a href="./" className= "w-12 flex ml-2 font-bold text-4xl text-green-500 p-2 ">MedCare</a>
         </header>
         <main className="w-full h-full flex flex-1 justify-center items-center h-screen bg-gray-100">
                 <form
