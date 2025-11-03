@@ -34,20 +34,22 @@ export default function Home() {
         setError(content.error);
       }
     }
+
+
   };
 
   return (
     <>
-        <header className= " w-full h-16" >
-        <h1 className= " flex w-full text-4xl">E-medCare</h1>
+    <div className="min-h-screen flex flex-col">
+        <header className= " w-full h-12 bg-white" >
+        <h1 className= "ml-2 font-bold text-4xl text-green-500 p-2 ">MedCare</h1>
         </header>
-        <main className="">
-            <div className=" w-full h-full flex justify-center items-center h-screen bg-gray-200 ">
+        <main className="w-full h-full flex flex-1 justify-center items-center h-screen bg-gray-100">
                 <form
                     className="w-full max-w-sm p-10 bg-white rounded-lg shadow-md "
                     onSubmit={authenticantion}
                 >
-                    <h1 className="font-bold py-6 block text-4xl ">Entrar</h1>
+                    <h1 className="font-bold py-6 block text-4xl text-green-500  ">Entrar</h1>
                     <div className="w-full py-2">
                         {/*<label htmlFor="" className="text-sm font-bold py-2 block">*/}
                         {/*</label>*/}
@@ -72,9 +74,9 @@ export default function Home() {
                         />
                     </div>
                     <div className="w-full py-2">
-                        <a className=" text-blue-400">Esqueceu a senha?</a>
-
-                        <button className=" mt-4 w-full p-2 text-gray-200 border rounded-4xl bg-blue-400 flex justify-center ">
+                        <a href= "./forgetPassword/page.tsx" className=" text-green-500">Esqueceu a senha?</a>
+                        <a href="./createAccount/page.tsx" className="flex mt-2 text-green-500 font-bold" >Criar conta</a>
+                        <button className=" mt-4 w-full p-2 text-2xl text-gray-200 border rounded-4xl bg-green-500 flex justify-center ">
                             Login
                         </button>
                     </div>
@@ -88,10 +90,9 @@ export default function Home() {
                             </div>
                         )}
                     </div>
-                </form>
-            </div>
-        </main>
-
+               </form>
+          </main>
+      </div>
     </>
   );
 }
