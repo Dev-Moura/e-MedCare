@@ -47,7 +47,7 @@ export default function Home() {
                     className="w-full max-w-sm p-10 bg-white rounded-lg shadow-md "
                     onSubmit={authenticantion}
                 >
-                    <h1 className="font-bold py-6 block text-4xl text-blue-600  ">Entrar</h1>
+                    <h1 className="font-bold py-6 block text-4xl text-gray-700  ">Entrar</h1>
                     <div className="w-full py-2">
                         <input
                             placeholder="Login"
