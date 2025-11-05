@@ -56,21 +56,21 @@ export default function DoctorList() {
           {!!doctors &&
             doctors.map((doctors: any) => (
               <tr>
-                <td className="border border-slate-300">{doctor.name}</td>
+                <td className="border border-slate-300">{doctors.name}</td>
                 <td className="border border-slate-300 text-center">
-                  {doctor.login}
+                  {doctors.login}
                 </td>
                 <td className="border border-slate-300 text-center">
-                  {doctor.medicalSpecialty}
+                  {doctors.medicalSpecialty}
                 </td>
                 <td className="border border-slate-300 text-center">
-                  {doctor.medicalRegistration}
+                  {doctors.medicalRegistration}
                 </td>
                 <td className="border border-slate-300 text-center">
-                  {doctor.email}
+                  {doctors.email}
                 </td>
                 <td className="border border-slate-300 text-center">
-                  {doctor.phone}
+                  {doctors.phone}
                 </td>
                 <td className="border border-slate-300 text-center">
                   <button
