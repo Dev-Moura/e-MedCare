@@ -53,7 +53,7 @@ export default function Home() {
                             placeholder="Login"
                             type="text"
                             name="name"
-                            className="w-full border-1 border-gray-600 p-4 rounded-sm placeholder-gray-700"
+                            className="w-full border-1 border-gray-600 p-4 rounded-sm placeholder-gray-700 focus:placeholder-transparent focus:outline-none"
                             onChange={(e: any) => setLogin(e.target.value)}
                         />
                     </div>
@@ -62,13 +62,14 @@ export default function Home() {
                             placeholder="Password"
                             name="password"
                             type="password"
-                            className="mt-2 w-full border-1 border-gray-600 p-4 rounded-sm placeholder-gray-700"
+                            className="mt-2 w-full border-1 border-gray-600 p-4 rounded-sm placeholder-gray-700 focus:placeholder-transparent focus:outline-none"
                             onChange={(e: any) => setPassword(e.target.value)}
                         />
                     </div>
                     <div className="w-full py-2">
                         <a href= "./forgetPassword" className="w-4 text-blue-600">Esqueceu a senha?</a>
-                        <a href="./createAccount/" className="flex mt-2 text-gray-700 font-bold text-2xl w-1/2" >Criar conta</a>
+                        <a href="./pacient/create" className="flex mt-2 text-gray-700 font-bold text-1xl w-2/3" >Paciente? Crie sua conta</a>
+                        <a href="./doctor/create" className="flex mt-2 text-gray-700 font-bold text-1xl w-2/3" >Doutor(a)? Crie sua conta</a>
                         <button className=" mt-6 w-full p-2 text-2xl text-gray-200 border rounded-4xl bg-blue-600 flex justify-center ">
                             Login
                         </button>

@@ -1,4 +1,5 @@
 import express from "express";
+import bcrypt from "bcrypt";
 import PacientService from "../services/PacientService.js";
 
 let router = express.Router();
@@ -25,10 +26,13 @@ router.get("/getPacient/:id", async (req, res) => {
 });
 
 router.post("/postPacient", async (req, res) => {
-  const { name, birthDate, email, phone } = req.body;
+  const { name, login, password, birthDate, email, phone } = req.body;
   try {
+    const hashedPassword = await bcrypt.hash(password, 10);
     const pacient = await PacientService.savePacient({
       name,
+      login,
+      password: hashedPassword,
       birthDate,
       email,
       phone,
@@ -46,6 +50,8 @@ router.put("/pacients/:id", async (req, res) => {
   try {
     const pacient = await PacientService.updatePacient(id, {
       name,
+      login,
+      password,
       birthDate,
       email,
       phone,

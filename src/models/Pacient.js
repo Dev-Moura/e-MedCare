@@ -7,6 +7,27 @@ const pacientSchema = new Schema({
     type: String,
     required: [true, "Pacient name is required."],
   },
+
+  login: {
+    type: String,
+    required: [true, "Login is required."],
+    unique: true,
+  },
+
+   password: {
+    type: String,
+    required: [true, "Password is required."],
+    validade: {
+      validator: (v) => {
+        return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/.test(
+          v
+        );
+      },
+      message: (msg) =>
+        `${msg.value} Your password required. Following the exemple: J34@abc5.`,
+    },
+  },
+
   birthDate: {
     type: String,
     require: [true, "Date of birth is required."],

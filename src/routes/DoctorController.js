@@ -4,7 +4,7 @@ import DoctorService from "../services/DoctorService.js";
 
 let router = express.Router();
 
-router.get("/Doctors", async (req, res) => {
+router.get("/doctors", async (req, res) => {
   try {
     const doctors = await DoctorService.getAllDoctors();
     res.send(doctors);
