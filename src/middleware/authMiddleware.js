@@ -1,6 +1,10 @@
 import jwt from "jsonwebtoken";
 
+<<<<<<< HEAD
 function verifyToken(req, res, next) {
+=======
+function verifyToken(erq, res, next) {
+>>>>>>> origin/implementation-jwt
   const token = req.header("Authorization");
 
   if (!token) {

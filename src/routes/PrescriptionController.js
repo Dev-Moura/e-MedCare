@@ -1,5 +1,6 @@
 import express from "express";
 import PrescriptionService from "../services/PrescriptionService.js";
+<<<<<<< HEAD
 import multer from "multer";
 import process from "process";
 import path from "path";
@@ -48,12 +49,21 @@ router.get("/readPrescription/:id", async (req, res) => {
   }
 });
 
+=======
+
+let router = express.Router();
+
+>>>>>>> origin/implementation-jwt
 router.get("/prescriptions", async (req, res) => {
   try {
     const prescriptions = await PrescriptionService.getAllPrescriptions();
     res.send(prescriptions);
   } catch (e) {
+<<<<<<< HEAD
     console.error(e);
+=======
+    console.log(e);
+>>>>>>> origin/implementation-jwt
     res.status(500).send(e);
   }
 });
@@ -64,7 +74,11 @@ router.get("/getPrescription/:id", async (req, res) => {
     const prescription = await PrescriptionService.getPrescription(id);
     res.send(prescription);
   } catch (e) {
+<<<<<<< HEAD
     console.error(e);
+=======
+    console.log(e);
+>>>>>>> origin/implementation-jwt
     res.status(500).send(e);
   }
 });
@@ -81,7 +95,11 @@ router.post("/postPrescription", async (req, res) => {
     });
     res.status(201).send(prescription);
   } catch (e) {
+<<<<<<< HEAD
     console.error(e);
+=======
+    console.log(e);
+>>>>>>> origin/implementation-jwt
     res.status(500).send("Failure to register prescription" + e);
   }
 });
@@ -100,7 +118,11 @@ router.put("/prescriptions/:id", async (req, res) => {
     res.status(201).send(prescription);
   } catch (e) {
     s;
+<<<<<<< HEAD
     console.error(e);
+=======
+    console.log(e);
+>>>>>>> origin/implementation-jwt
     res.status(500).send(e);
   }
 });
@@ -111,6 +133,7 @@ router.delete("/prescriptions/:id", async (req, res) => {
     const prescription = await PrescriptionService.deletePrescription(id);
     res.send(prescription);
   } catch (e) {
+<<<<<<< HEAD
     console.error(e);
     res.status(500).send(e);
   }
@@ -125,6 +148,9 @@ router.get("/generatePrescription/:id", async (req, res) => {
     res.send(generatedPrescription);
   } catch (e) {
     console.error(e);
+=======
+    console.log(e);
+>>>>>>> origin/implementation-jwt
     res.status(500).send(e);
   }
 });

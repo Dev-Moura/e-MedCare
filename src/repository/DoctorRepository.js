@@ -16,7 +16,11 @@ const saveDoctor = async ({
   name,
   login,
   password,
+<<<<<<< HEAD
   medicalSpecialty,
+=======
+  medicalSpeciality,
+>>>>>>> origin/implementation-jwt
   medicalRegistration,
   email,
   phone,
@@ -26,7 +30,11 @@ const saveDoctor = async ({
       name,
       login,
       password,
+<<<<<<< HEAD
       medicalSpecialty,
+=======
+      medicalSpeciality,
+>>>>>>> origin/implementation-jwt
       medicalRegistration,
       email,
       phone,
@@ -39,7 +47,19 @@ const saveDoctor = async ({
 
 const updateDoctor = async (
   id,
+<<<<<<< HEAD
   { name, login, password, medicalSpecialty, medicalRegistration, email, phone }
+=======
+  {
+    name,
+    login,
+    password,
+    medicalSpeciality,
+    medicalRegistration,
+    email,
+    phone,
+  }
+>>>>>>> origin/implementation-jwt
 ) => {
   try {
     return await Doctor.findByIdAndUpdate(
@@ -48,7 +68,11 @@ const updateDoctor = async (
         name,
         login,
         password,
+<<<<<<< HEAD
         medicalSpecialty,
+=======
+        medicalSpeciality,
+>>>>>>> origin/implementation-jwt
         medicalRegistration,
         email,
         phone,
