@@ -1,6 +1,7 @@
 "use client";
 
 import axios from "axios";
+import MedCareLogo from "./components/header/page";
 import ReCaptchaComponent from "./components/reCaptchaComponent/page";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -60,10 +61,10 @@ export default function Home() {
   return (
     <>
     <div className="min-h-screen flex flex-col">
-        <header className= "w-full h-14 bg-white" >
-          <a href="./" className= "w-12 flex ml-2 font-bold text-4xl text-blue-600 p-2 ">MedCare</a>
-        </header>
-        <main className="w-full h-full flex flex-1 justify-center items-center h-screen bg-gray-400">
+      <header className="flex items-center gap-3 p-4 bg-white">
+        <MedCareLogo className="w-68 text-blue-600" />
+      </header>
+        <main className="bg-[url(/image/bg-login.jpg)] bg-cover bg-center w-full h-full flex flex-1 justify-center items-center h-screen bg-gray-400" >
                 <form
                     className="w-full max-w-sm p-10 bg-white rounded-lg shadow-md "
                     onSubmit={authenticantion}
@@ -88,9 +89,8 @@ export default function Home() {
                         />
                     </div>
                     <div className="w-full py-2">
-                        <a href= "./forgetPassword" className="w-4 text-blue-600">Esqueceu a senha?</a>
-                        <a href="./pacient/create" className="flex mt-2 text-gray-700 font-bold text-1xl w-2/3" >Paciente? Crie sua conta</a>
-                        <a href="./doctor/create" className="flex mt-2 text-gray-700 font-bold text-1xl w-2/3" >Doutor(a)? Crie sua conta</a>
+                        <a href="./pacient/create" className="flex mt-2 text-black-700  w-2/3" >Paciente? Crie sua conta</a>
+                        <a href="./doctor/create" className="flex mt-2 text-black-700  w-2/3" >Doutor(a)? Crie sua conta</a>
                         <ReCaptchaComponent
                          onVerify={setCaptchaToken} 
                          onExpired={() => setCaptchaToken(null)}
@@ -98,6 +98,7 @@ export default function Home() {
                         <button type="submit" className=" mt-6 w-full p-2 text-2xl text-gray-200 border rounded-4xl bg-blue-600 flex justify-center ">
                             Login
                         </button>
+                        <a href= "./forgetPassword" className="mt-6 flex justify-center  text-black-700">Esqueceu a senha?</a>
                     </div>
                     <div>
                         {error && (

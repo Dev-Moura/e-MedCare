@@ -18,7 +18,3 @@
     --foreground: #d1d1d1;
   }
 }
-
-body {
-    background: var(--background);
-}

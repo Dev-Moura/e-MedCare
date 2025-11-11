@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
+
 export default function DoctorCreate() {
   const router = useRouter();
 
@@ -60,10 +61,10 @@ export default function DoctorCreate() {
   return (
     <>
     <div className="min-h-screen flex flex-col">
-      <header className="w-full h-14 bg-white">
+      <header className="w-full h-14 backdrop-brightness-100">
         <a href="../" className="w-12 flex ml-2 font-bold text-4xl text-blue-600 p-2">MedCare</a>
       </header>
-      <main className="w-full h-full flex flex-1 justify-center items-center h-screen bg-gray-400">
+      <main className="bg-[url(/image/bg-login.jpg)] bg-cover bg-center w-full h-full flex flex-1 justify-center items-center h-screen">
       <form className="w-full max-w-2xl p-10 bg-white rounded-lg shadow-md" onSubmit={addDoctor}>
         <h1 className="font-bold py-6 block text-3xl text-gray-700">
           Cadastro de Médico

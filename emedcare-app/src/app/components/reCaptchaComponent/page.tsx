@@ -9,7 +9,7 @@ const ReCaptchaComponent = ({onVerify, onExpired}) => {
     }
     return (
         <div className="mt-6">
-            <ReCAPTCHA
+            <ReCAPTCHA 
                 sitekey={SITE_KEY}
                 onChange={onVerify}
                 onExpired={onExpired}
