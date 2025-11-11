@@ -12,10 +12,12 @@ const getPacient = async (id) => {
   }
 };
 
-const savePacient = async ({ name, birthDate, email, phone }) => {
+const savePacient = async ({ name, login, password, birthDate, email, phone }) => {
   try {
     const pacientDetails = new Pacient({
       name,
+      login,
+      password,
       birthDate,
       email,
       phone,
@@ -26,12 +28,14 @@ const savePacient = async ({ name, birthDate, email, phone }) => {
   }
 };
 
-const updatePacient = async (id, { name, birthDate, email, phone }) => {
+const updatePacient = async (id, { name, login, password, birthDate, email, phone }) => {
   try {
     return await Pacient.findByIdAndUpdate(
       id,
       {
         name,
+        login,
+        password,
         birthDate,
         email,
         phone,
