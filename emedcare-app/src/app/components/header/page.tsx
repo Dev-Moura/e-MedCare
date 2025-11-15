@@ -1,6 +1,6 @@
 import React from "react";
 
-const MedCareLogo = ({ className="w-24 h-auto text-blue-600"}) => {
+const MedCareLogo = ({ className="w-24 h-auto text-blue-500"}) => {
     return (
             <svg
                 viewBox="0 0 300 80"
@@ -23,8 +23,9 @@ const MedCareLogo = ({ className="w-24 h-auto text-blue-600"}) => {
                 y="45"
                 fontFamily="Poppins, Arial, sans-serif"
                 fontWeight="600"
-                fontSize="32"
+                fontSize="58"
                 fill="currentColor"
+
             >
         
             Med<tspan fontWeight="400">Care</tspan>

@@ -61,8 +61,10 @@ export default function Home() {
   return (
     <>
     <div className="min-h-screen flex flex-col">
-      <header className="flex items-center gap-3 p-4 bg-white">
-        <MedCareLogo className="w-68 text-blue-600" />
+      <header className=" h-16 flex items-center gap-3 p-2 bg-blue-400">
+        <a href="./">
+          <MedCareLogo className="h-12 text-white p-2" />
+        </a>
       </header>
         <main className="bg-[url(/image/bg-login.jpg)] bg-cover bg-center w-full h-full flex flex-1 justify-center items-center h-screen bg-gray-400" >
                 <form
@@ -95,7 +97,7 @@ export default function Home() {
                          onVerify={setCaptchaToken} 
                          onExpired={() => setCaptchaToken(null)}
                          />
-                        <button type="submit" className=" mt-6 w-full p-2 text-2xl text-gray-200 border rounded-4xl bg-blue-600 flex justify-center ">
+                        <button type="submit" className=" mt-6 w-full p-2 text-2xl text-gray-200 border rounded-4xl bg-blue-400 flex justify-center ">
                             Login
                         </button>
                         <a href= "./forgetPassword" className="mt-6 flex justify-center  text-black-700">Esqueceu a senha?</a>
