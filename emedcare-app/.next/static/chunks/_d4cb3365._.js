@@ -79,8 +79,13 @@ function Home() {
                                 children: "Entrar"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
+<<<<<<< HEAD
                                 lineNumber: 55,
                                 columnNumber: 13
+=======
+                                lineNumber: 50,
+                                columnNumber: 21
+>>>>>>> 6a7dfc1e391fb9fc170a14614f850937c2533ae9
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "w-full py-2",
@@ -92,6 +97,7 @@ function Home() {
                                     onChange: (e)=>setLogin(e.target.value)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.tsx",
+<<<<<<< HEAD
                                     lineNumber: 59,
                                     columnNumber: 15
                                 }, this)
@@ -99,6 +105,15 @@ function Home() {
                                 fileName: "[project]/src/app/page.tsx",
                                 lineNumber: 58,
                                 columnNumber: 13
+=======
+                                    lineNumber: 52,
+                                    columnNumber: 25
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/page.tsx",
+                                lineNumber: 51,
+                                columnNumber: 21
+>>>>>>> 6a7dfc1e391fb9fc170a14614f850937c2533ae9
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "w-full py-2",
@@ -110,6 +125,7 @@ function Home() {
                                     onChange: (e)=>setPassword(e.target.value)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.tsx",
+<<<<<<< HEAD
                                     lineNumber: 68,
                                     columnNumber: 15
                                 }, this)
@@ -117,6 +133,15 @@ function Home() {
                                 fileName: "[project]/src/app/page.tsx",
                                 lineNumber: 67,
                                 columnNumber: 13
+=======
+                                    lineNumber: 61,
+                                    columnNumber: 25
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/page.tsx",
+                                lineNumber: 60,
+                                columnNumber: 21
+>>>>>>> 6a7dfc1e391fb9fc170a14614f850937c2533ae9
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "w-full py-2",
@@ -127,8 +152,13 @@ function Home() {
                                         children: "Esqueceu a senha?"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.tsx",
+<<<<<<< HEAD
                                         lineNumber: 77,
                                         columnNumber: 15
+=======
+                                        lineNumber: 70,
+                                        columnNumber: 25
+>>>>>>> 6a7dfc1e391fb9fc170a14614f850937c2533ae9
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "./createAccount/",
@@ -136,22 +166,37 @@ function Home() {
                                         children: "Criar conta"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.tsx",
+<<<<<<< HEAD
                                         lineNumber: 80,
                                         columnNumber: 15
+=======
+                                        lineNumber: 71,
+                                        columnNumber: 25
+>>>>>>> 6a7dfc1e391fb9fc170a14614f850937c2533ae9
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         className: " mt-6 w-full p-2 text-2xl text-gray-200 border rounded-4xl bg-blue-600 flex justify-center ",
                                         children: "Login"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.tsx",
+<<<<<<< HEAD
                                         lineNumber: 86,
                                         columnNumber: 15
+=======
+                                        lineNumber: 72,
+                                        columnNumber: 25
+>>>>>>> 6a7dfc1e391fb9fc170a14614f850937c2533ae9
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/page.tsx",
+<<<<<<< HEAD
                                 lineNumber: 76,
                                 columnNumber: 13
+=======
+                                lineNumber: 69,
+                                columnNumber: 21
+>>>>>>> 6a7dfc1e391fb9fc170a14614f850937c2533ae9
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 children: error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -162,6 +207,7 @@ function Home() {
                                     children: error
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.tsx",
+<<<<<<< HEAD
                                     lineNumber: 92,
                                     columnNumber: 17
                                 }, this)
@@ -169,23 +215,45 @@ function Home() {
                                 fileName: "[project]/src/app/page.tsx",
                                 lineNumber: 90,
                                 columnNumber: 13
+=======
+                                    lineNumber: 78,
+                                    columnNumber: 29
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/page.tsx",
+                                lineNumber: 76,
+                                columnNumber: 21
+>>>>>>> 6a7dfc1e391fb9fc170a14614f850937c2533ae9
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/page.tsx",
+<<<<<<< HEAD
                         lineNumber: 51,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
                     lineNumber: 50,
+=======
+                        lineNumber: 46,
+                        columnNumber: 17
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/src/app/page.tsx",
+                    lineNumber: 45,
+>>>>>>> 6a7dfc1e391fb9fc170a14614f850937c2533ae9
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/page.tsx",
             lineNumber: 41,
+<<<<<<< HEAD
             columnNumber: 7
+=======
+            columnNumber: 5
+>>>>>>> 6a7dfc1e391fb9fc170a14614f850937c2533ae9
         }, this)
     }, void 0, false);
 }
