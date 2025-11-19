@@ -12,11 +12,7 @@ const saveDoctor = async ({
   name,
   login,
   password,
-<<<<<<< HEAD
-  medicalSpecialty,
-=======
   medicalSpeciality,
->>>>>>> origin/implementation-jwt
   medicalRegistration,
   email,
   phone,
@@ -25,11 +21,7 @@ const saveDoctor = async ({
     name,
     login,
     password,
-<<<<<<< HEAD
-    medicalSpecialty,
-=======
     medicalSpeciality,
->>>>>>> origin/implementation-jwt
     medicalRegistration,
     email,
     phone,
@@ -38,9 +30,6 @@ const saveDoctor = async ({
 
 const updateDoctor = async (
   id,
-<<<<<<< HEAD
-  { name, login, password, medicalSpecialty, medicalRegistration, email, phone }
-=======
   {
     name,
     login,
@@ -50,17 +39,12 @@ const updateDoctor = async (
     email,
     phone,
   }
->>>>>>> origin/implementation-jwt
 ) => {
   return DoctorRepository.updateDoctor(id, {
     name,
     login,
     password,
-<<<<<<< HEAD
-    medicalSpecialty,
-=======
     medicalSpeciality,
->>>>>>> origin/implementation-jwt
     medicalRegistration,
     email,
     phone,

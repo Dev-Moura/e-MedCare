@@ -35,11 +35,7 @@ const savePrescription = async ({
 
 const updatePrescription = async (
   id,
-<<<<<<< HEAD
-  { date, appointmetId, medicine, dosage, instructions, file }
-=======
   { date, appointmetId, medicine, dosage, instructions }
->>>>>>> origin/implementation-jwt
 ) => {
   try {
     return await pacient.findByIdAndUpdate(
@@ -50,10 +46,6 @@ const updatePrescription = async (
         medicine,
         dosage,
         instructions,
-<<<<<<< HEAD
-        file,
-=======
->>>>>>> origin/implementation-jwt
       },
       {
         new: true,

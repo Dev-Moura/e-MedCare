@@ -1,46 +1,31 @@
 import express from "express";
+
 import AppointmentController from "./AppointmentController.js";
-<<<<<<< HEAD
 import PrescriptionController from "./PrescriptionController.js";
-<<<<<<<< HEAD:src/routes/router.js
-import verifyToken from "../middleware/authMiddleware.js";
-import doctorService from "../services/DoctorService.js";
 import PacientController from "./PacientController.js";
 import DoctorController from "./DoctorController.js";
+
+import verifyToken from "../middleware/authMiddleware.js";
+
+import doctorService from "../services/DoctorService.js";
+import pacientService from "../services/PacientService.js";
+
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
-========
-=======
-import DoctorController from "./DoctorController.js";
-import PacientController from "./PacientController.js";
-import PrescriptionController from "./PrescriptionController.js";
->>>>>>> origin/implementation-jwt
-import doctorService from "../services/DoctorService.js";
-import bcrypt from "bcrypt";
-<<<<<<< Updated upstream:routes/router.js
-import verifyToken from "../middleware/authMiddleware.js";
-=======
-import pacientService from "../services/PacientService.js";
-import doctor from "../models/Doctor.js";
-import pacient from "../models/Pacient.js";
+const router = express.Router();
 
->>>>>>> Stashed changes:src/routes/router.js
-<<<<<<< HEAD
->>>>>>>> origin/implementation-jwt:routes/router.js
-=======
->>>>>>> origin/implementation-jwt
-let router = express.Router();
-
-router.get("/", function (req, res) {
-  console.log("hi!");
+router.get("/", (req, res) => {
   res.status(200).json({ message: "hi!" });
 });
 
-// mapeando login
+// ==========================
+// LOGIN
+// ==========================
 router.post("/login", async (req, res) => {
   try {
     const { login, password } = req.body;
+
     const doctor = await doctorService.getDoctorByLogin(login);
 
     if (!doctor) {
@@ -48,79 +33,109 @@ router.post("/login", async (req, res) => {
     }
 
     const passwordMatch = await bcrypt.compare(password, doctor.password);
-<<<<<<< HEAD
+
     if (!passwordMatch) {
-=======
-    if (!password) {
->>>>>>> origin/implementation-jwt
       return res.status(401).json({ error: "Authentication failed!" });
     }
 
-    const token = jwt.sign({ doctorId: doctor._id }, "you-secret-key", {
-      expiresIn: "1h",
-    });
+    const token = jwt.sign(
+      { doctorId: doctor._id },
+      process.env.JWT_SECRET || "your-secret-key",
+      { expiresIn: "1h" }
+    );
 
-    res.status(200).json({ token });
+    return res.status(200).json({ token });
   } catch (e) {
     console.log(e);
-    res.status(500).json({ error: "login failed" });
+    return res.status(500).json({ error: "Login failed" });
   }
 });
 
-<<<<<<< Updated upstream:routes/router.js
-//mapear recuperação de senha
-
-router.get("/forgetPassword", async (req, res) => {
+// ==========================
+// FORGET PASSWORD
+// ==========================
+router.post("/forgetPassword", async (req, res) => {
   try {
-    const {email} = req.body;
-    const doctor = await doctorService.getDoctor(email);
+    const { email } = req.body;
+    const doctor = await doctorService.getDoctorByEmail(email);
 
-    if(!doctor) {
-      return res.status(401).json({error: "email not found"})
+    if (!doctor) {
+      return res.status(404).json({ error: "Email not found" });
     }
+
+    // Aqui você poderia gerar token e enviar email
+    return res.status(200).json({ message: "Recovery email sent" });
   } catch (e) {
     console.log(e);
-    res.status(500).json({ error: "e-mail failed"})
-  } 
+    return res.status(500).json({ error: "Email failed" });
+  }
 });
-=======
-// Maping registration
 
+// ==========================
+// REGISTRATION
+// ==========================
 router.post("/registration", async (req, res) => {
   try {
-    const { name, login, password, medicalSpecialty, medicalRegistration, email, birthDate} = req.body;
-    const createDoctor = await doctorService.saveDoctor({name, login, password, medicalSpecialty, medicalRegistration, email, birthDate })
-   
-    
-    if(!createDoctor){
-      return res.status(401).json({ error: "Failed to create account"})
-    }
-    
-    const createPacient = await pacientService.savePacient({name, login, password, email, birthDate })
-    
-    if (!createPacient) {
-      return res.status(401).json({ error: "Failed to create a registration"});
+    const {
+      name,
+      login,
+      password,
+      medicalSpecialty,
+      medicalRegistration,
+      email,
+      birthDate,
+    } = req.body;
+
+    const createdDoctor = await doctorService.saveDoctor({
+      name,
+      login,
+      password,
+      medicalSpecialty,
+      medicalRegistration,
+      email,
+      birthDate,
+    });
+
+    if (!createdDoctor) {
+      return res.status(400).json({ error: "Failed to create doctor account" });
     }
 
-    let payload;
+    const createdPacient = await pacientService.savePacient({
+      name,
+      login,
+      password,
+      email,
+      birthDate,
+    });
 
-    if (createDoctor) {
-      payload = { createDoctor: createDoctor._id };
-    } else if (createPacient) {
-      payload = { createPacient: createPacient._id};
+    if (!createdPacient) {
+      return res
+        .status(400)
+        .json({ error: "Failed to create pacient account" });
     }
 
-    const token = jwt.sign(payload, "you-secret-key", {expiresIn: "1h"})
-    res.status(200).json({ token }); 
-  } catch {
+    const payload = {
+      doctorId: createdDoctor._id,
+      pacientId: createdPacient._id,
+    };
+
+    const token = jwt.sign(
+      payload,
+      process.env.JWT_SECRET || "your-secret-key",
+      { expiresIn: "1h" }
+    );
+
+    return res.status(200).json({ token });
+  } catch (e) {
     console.log(e);
-    res.status(500).json({ error: "falied" });
+    return res.status(500).json({ error: "Registration failed" });
   }
-})
+});
 
->>>>>>> Stashed changes:src/routes/router.js
-
-router.use("/", verifyToken, AppointmentController); // vai usar a "/" para navegar entre as pastas
+// ==========================
+// PROTECTED ROUTES
+// ==========================
+router.use("/", verifyToken, AppointmentController);
 router.use("/", verifyToken, DoctorController);
 router.use("/", verifyToken, PacientController);
 router.use("/", verifyToken, PrescriptionController);

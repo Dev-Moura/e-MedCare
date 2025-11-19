@@ -5,10 +5,7 @@ const { Schema } = mongoose;
 const prescriptionSchema = new Schema({
   date: {
     type: Date,
-<<<<<<< HEAD
-=======
     required: [true, "Date of Prescription is required."],
->>>>>>> origin/implementation-jwt
   },
   appointmetId: {
     type: String,
@@ -29,12 +26,6 @@ const prescriptionSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-<<<<<<< HEAD
-  file: {
-    type: String,
-  },
-=======
->>>>>>> origin/implementation-jwt
 });
 
 const prescription = mongoose.model("Prescription", prescriptionSchema);

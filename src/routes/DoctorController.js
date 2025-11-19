@@ -9,11 +9,7 @@ router.get("/doctors", async (req, res) => {
     const doctors = await DoctorService.getAllDoctors();
     res.send(doctors);
   } catch (e) {
-<<<<<<< HEAD
-    console.error(e);
-=======
     console.log(e);
->>>>>>> origin/implementation-jwt
     res.status(500).send(e);
   }
 });
@@ -24,11 +20,7 @@ router.get("/getDoctor/:id", async (req, res) => {
     const doctor = await DoctorService.getDoctor(id);
     res.send(doctor);
   } catch (e) {
-<<<<<<< HEAD
-    console.error(e);
-=======
     console.log(e);
->>>>>>> origin/implementation-jwt
     res.status(500).send(e);
   }
 });
@@ -38,11 +30,7 @@ router.post("/postDoctor", async (req, res) => {
     name,
     login,
     password,
-<<<<<<< HEAD
-    medicalSpecialty,
-=======
     medicalSpeciality,
->>>>>>> origin/implementation-jwt
     medicalRegistration,
     email,
     phone,
@@ -53,22 +41,14 @@ router.post("/postDoctor", async (req, res) => {
       name,
       login,
       password: hashedPassword,
-<<<<<<< HEAD
-      medicalSpecialty,
-=======
       medicalSpeciality,
->>>>>>> origin/implementation-jwt
       medicalRegistration,
       email,
       phone,
     });
     res.status(201).send(doctor);
   } catch (e) {
-<<<<<<< HEAD
-    console.error(e);
-=======
     console.log(e);
->>>>>>> origin/implementation-jwt
     res.status(500).send("Failure to register doctor" + e);
   }
 });
@@ -79,11 +59,7 @@ router.put("/Doctors/:id", async (req, res) => {
     name,
     login,
     password,
-<<<<<<< HEAD
-    medicalSpecialty,
-=======
     medicalSpeciality,
->>>>>>> origin/implementation-jwt
     medicalRegistration,
     email,
     phone,
@@ -93,22 +69,14 @@ router.put("/Doctors/:id", async (req, res) => {
       name,
       login,
       password,
-<<<<<<< HEAD
-      medicalSpecialty,
-=======
       medicalSpeciality,
->>>>>>> origin/implementation-jwt
       medicalRegistration,
       email,
       phone,
     });
     res.status(201).send(doctor);
   } catch (e) {
-<<<<<<< HEAD
-    console.error(e);
-=======
     console.log(e);
->>>>>>> origin/implementation-jwt
     res.status(500).send(e);
   }
 });

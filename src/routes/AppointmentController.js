@@ -8,11 +8,7 @@ router.get("/Appointments", async (req, res) => {
     const appointments = await AppointmentService.getAllAppointments();
     res.send(appointments);
   } catch (e) {
-<<<<<<< HEAD
-    console.error(e);
-=======
     console.log(e);
->>>>>>> origin/implementation-jwt
     res.status(500).send(e);
   }
 });
@@ -24,11 +20,7 @@ router.get("/getAppointment/:id", async (req, res) => {
     const appointment = await AppointmentService.getAppointment(id);
     res.send(appointment);
   } catch (e) {
-<<<<<<< HEAD
-    console.error(e);
-=======
     console.log(e);
->>>>>>> origin/implementation-jwt
     res.status(500).send(e);
   }
 });
@@ -44,11 +36,7 @@ router.post("/postAppointment", async (req, res) => {
     });
     res.send(appointment);
   } catch (e) {
-<<<<<<< HEAD
-    console.error(e);
-=======
     console.log(e);
->>>>>>> origin/implementation-jwt
     res.status(500).send(e);
   }
 });
@@ -65,11 +53,7 @@ router.put("/Appointment/:id", async (req, res) => {
     });
     res.status(201).send(appointment);
   } catch (e) {
-<<<<<<< HEAD
-    console.error(e);
-=======
     console.log(e);
->>>>>>> origin/implementation-jwt
     res.status(500).send(e);
   }
 });
@@ -81,11 +65,7 @@ router.delete("/Appointment/:id", async (req, res) => {
     const appointment = await AppointmentService.deleteAppointment(id);
     res.send(appointment);
   } catch (e) {
-<<<<<<< HEAD
-    console.error(e);
-=======
     console.log(e);
->>>>>>> origin/implementation-jwt
     res.status(500).send(e);
   }
 });
@@ -100,11 +80,7 @@ router.put("/reschedule/:id", async (req, res) => {
     appointment = await AppointmentService.updateAppointment(id, { date });
     res.status(201).send(appointment);
   } catch (e) {
-<<<<<<< HEAD
-    console.error(e);
-=======
     console.log(e);
->>>>>>> origin/implementation-jwt
     res.status(500).send(e);
   }
 });

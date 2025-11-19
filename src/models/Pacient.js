@@ -14,7 +14,7 @@ const pacientSchema = new Schema({
     unique: true,
   },
 
-   password: {
+  password: {
     type: String,
     required: [true, "Password is required."],
     validade: {
@@ -34,19 +34,11 @@ const pacientSchema = new Schema({
   },
   email: {
     type: String,
-<<<<<<< HEAD
-    required: [true, "Email is required."],
-  },
-  phone: {
-    type: String,
-    required: [true, "Phone number is required."],
-=======
     required: [true, "Email contact is required"],
   },
   phone: {
     type: String,
     required: [true, "Phone number is required"],
->>>>>>> origin/implementation-jwt
   },
   createdAt: {
     type: Date,

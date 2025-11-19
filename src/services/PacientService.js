@@ -8,7 +8,14 @@ const getPacient = async (id) => {
   return PacientRepository.getPacient(id);
 };
 
-const savePacient = async ({ name,login, password, birthDate, email, phone }) => {
+const savePacient = async ({
+  name,
+  login,
+  password,
+  birthDate,
+  email,
+  phone,
+}) => {
   return PacientRepository.savePacient({
     name,
     login,
@@ -19,7 +26,10 @@ const savePacient = async ({ name,login, password, birthDate, email, phone }) =>
   });
 };
 
-const updatePacient = async (id, { name, login, password, birthDate, email, phone }) => {
+const updatePacient = async (
+  id,
+  { name, login, password, birthDate, email, phone }
+) => {
   return PacientRepository.updatePacient(id, {
     name,
     login,
