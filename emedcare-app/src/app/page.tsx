@@ -1,120 +1,26 @@
-"use client";
-
-import axios from "axios";
-import MedCareLogo from "./components/header/page";
-import ReCaptchaComponent from "./components/reCaptchaComponent/page";
-import React, { useState } from "react";
-import { useRouter } from "next/navigation";
-
+import React from "react";
+import Header from "./components/Header/page";
+import Hero from "./components/Hero/page";
+import QuickActions from "./components/QuickActions/page";
+import Services from "./components/Services/page";
+import Doctors from "./components/Doctors/page";
+import Testimonials from "./components/Testimonials/page";
+import Contact from "./components/Contact/page";
+import Footer from "./components/Footer/page";
 
 export default function Home() {
-  const router = useRouter();
-  const [login, setLogin] = useState<string>(""); // hook -> gancho
-  const [password, setPassword] = useState<string>("");
-  const [error, setError] = useState<string | null>("");
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-  
-
-  const authenticantion = async (e: any) => {
-    e.preventDefault();
-    setError(null);
-
-    // validação de login e senha
-    if (login != "" && password != "") {
-      const formData = {
-        login: login,
-        password: password,
-        captchaToken,
-      };
-
-    if(!captchaToken) {
-      alert("Please confirm that you are not a robot!");
-      return;
-     } ;
-
-
-     try{
-
-      // chamada do back-end
-      const add = await fetch("http://localhost:3001/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      // cria um .json do conteudo da chamada
-      const content = await add.json();
-      
-      // se o token existir
-      if (content.token) {
-        sessionStorage.setItem("token", content.token); // implementação simplista do jwt
-        router.push("/home"); // se o token existir encaminha o usuario pra home
-      } else {
-        setError(content.error || "Error authenticating user");
-      }
-     } catch (e) {
-      setError("Server connection error")
-     }
-    }
-  };
-
   return (
-    <>
-    <div className="min-h-screen flex flex-col">
-      <header className=" h-16 flex items-center gap-3 p-2 bg-blue-400">
-        <a href="./">
-          <MedCareLogo className="h-12 text-white p-2" />
-        </a>
-      </header>
-        <main className="bg-[url(/image/bg-login.jpg)] bg-cover bg-center w-full h-full flex flex-1 justify-center items-center h-screen bg-gray-400" >
-                <form
-                    className="w-full max-w-sm p-10 bg-white rounded-lg shadow-md "
-                    onSubmit={authenticantion}
-                >
-                    <h1 className="font-bold py-6 block text-4xl text-gray-700  ">Entrar</h1>
-                    <div className="w-full py-2">
-                        <input
-                            placeholder="Login"
-                            type="text"
-                            name="name"
-                            className="w-full border-1 border-gray-600 p-4 rounded-sm placeholder-gray-700 focus:placeholder-transparent focus:outline-none"
-                            onChange={(e) => setLogin(e.target.value)}
-                        />
-                    </div>
-                    <div className="w-full py-2">
-                        <input
-                            placeholder="Password"
-                            name="password"
-                            type="password"
-                            className="mt-2 w-full border-1 border-gray-600 p-4 rounded-sm placeholder-gray-700 focus:placeholder-transparent focus:outline-none"
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </div>
-                    <div className="w-full py-2">
-                        <a href="./pacient/create" className="flex mt-2 text-black-700  w-2/3" >Paciente? Crie sua conta</a>
-                        <a href="./doctor/create" className="flex mt-2 text-black-700  w-2/3" >Doutor(a)? Crie sua conta</a>
-                        <ReCaptchaComponent
-                         onVerify={setCaptchaToken} 
-                         onExpired={() => setCaptchaToken(null)}
-                         />
-                        <button type="submit" className=" mt-6 w-full p-2 text-2xl text-gray-200 border rounded-4xl bg-blue-400 flex justify-center ">
-                            Login
-                        </button>
-                        <a href= "./forgetPassword" className="mt-6 flex justify-center  text-black-700">Esqueceu a senha?</a>
-                    </div>
-                    <div>
-                        {error && (
-                            <div
-                                className="p-2 text-white border-gray-200 border rounded-sm bg-red-400"
-                                style={{ color: "red" }}
-                            >
-                                {error}
-                            </div>
-                        )}
-                    </div>
-               </form>
-          </main>
-      </div>
-    </>
+    <div className="min-h-screen bg-background dark:bg-bg-full text-text dark:text-text-dark">
+      <Header />
+      <main className=" container mx-auto px-4 lg:px-8 py-10">
+        <Hero />
+        <QuickActions />
+        <Services />
+        <Doctors />
+        <Testimonials />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   );
 }

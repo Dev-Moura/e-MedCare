@@ -1,37 +1,34 @@
 import React from "react";
 
-const MedCareLogo = ({ className="w-24 h-auto text-blue-500"}) => {
-    return (
-            <svg
-                viewBox="0 0 300 80"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                className={className}
-            >
+export default function Header() {
+  return (
+    <header className="bg-background dark:bg-bg-full text-text dark:text-text-dark border-b border-gray-700">
+      <div className="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 bg-blue-600 rounded-md flex items-center justify-center font-bold">
+            <a href="./" className="font-bold text-2xl">M</a>
+          </div>
+          <div>
+            <h1 className="text-lg font-semibold">MedCare</h1>
+            <p className="text-sm">Centro Médico - Atendimento humanizado</p>
+          </div>
+        </div>
 
-            <g transform="translate(10,10)" fill="currentColor">
-                <rect x="22" y="0" width="8" height="20" rx="2" />
-                <rect x="22" y="0" width="8" height="20" rx="2" />
-                <path
-                    d="M26 18 c26 28, 14 28, 14 18 C14 12, 26 12, 26 18 Z"
-                    opacity="0.15"
-                />
-            </g>
+        <nav className="hidden md:flex items-center gap-6 text-sm">
+          <a href="#services" className="hover:text-blue-600">Serviços</a>
+          <a href="#doctors" className="hover:text-blue-600">Profissionais</a>
+          <a href="#contact" className="hover:text-blue-600">Contato</a>
+          <a href="./login" className="px-4 py-2 bg-blue-600 rounded-md shadow-sm">Login</a>
+        </nav>
 
-            <text
-                x="60"
-                y="45"
-                fontFamily="Poppins, Arial, sans-serif"
-                fontWeight="600"
-                fontSize="58"
-                fill="currentColor"
-
-            >
-        
-            Med<tspan fontWeight="400">Care</tspan>
-            </text>
-        </svg>
-    );
+        <div className="md:hidden">
+          <button aria-label="abrir menu" className="p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+  );
 }
-
-export default MedCareLogo;
