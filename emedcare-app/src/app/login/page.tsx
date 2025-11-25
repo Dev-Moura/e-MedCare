@@ -89,7 +89,6 @@ export default function Home() {
                         />
                     </div>
                     <div className="w-full py-2">
-                        <a href="./CreatePacient" className="text-text dark:text-text-dark flex justify-center mt-2 " >Paciente? Crie sua conta</a>
                         <ReCaptchaComponent
                          onVerify={setCaptchaToken} 
                          onExpired={() => setCaptchaToken(null)}
@@ -98,6 +97,7 @@ export default function Home() {
                             Login
                         </button>
                         <a href= "./forgetPassword" className="mt-6 flex justify-center ">Esqueceu a senha?</a>
+                        <a href="./CreatePacient" className="text-text dark:text-text-dark flex justify-center mt-2 " >Crie sua conta</a>
                     </div>
                     <div>
                         {error && (
