@@ -2,6 +2,8 @@
 
 import React, {useState} from "react";
 import { useRouter} from "next/navigation";
+import Header from "../components/Header/page";
+import Footer from "../components/Footer/page";
 
 export default function ForgetPassword() {
     const router = useRouter();
@@ -41,34 +43,32 @@ export default function ForgetPassword() {
 
     return (
         <>
-            <div className="min-h-screen flex flex-col">
-                <header className= "w-full h-14 bg-white" >
-                    <a href="./" className= "w-12 flex ml-2 font-bold text-4xl text-blue-600 p-2 ">MedCare</a>
-                </header>
-                <main className="w-full h-full flex flex-1 justify-center items-center h-screen bg-gray-400">
+            <div className="min-h-screen flex flex-col bg-background dark:bg-bg-full text-text dark:text-text-dark ">
+                <Header/>
+                <main className="w-full h-screen flex flex-1 justify-center items-center">
                     <form
-                        className="w-full max-w-sm p-10 bg-white rounded-lg shadow-md "
+                        className="w-full max-w-sm p-10 dark:bg-background-dark bg-background text-text dark:text-text-dark rounded-lg shadow-md "
                         onSubmit={authenticantion}
                     >
-                        <h1 className="font-bold py-6 block text-2xl text-blue-600  ">Informe o seu E-mail</h1>
+                        <h1 className="font-bold py-6 block text-2xl ">Informe o seu E-mail</h1>
                         <div className="w-full py-2">
                             <input
                                 placeholder="E-mail"
                                 type="text"
                                 name="email"
-                                className="w-full border-1 border-gray-600 p-4 rounded-sm placeholder-gray-700"
+                                className="w-full border border-gray-600 p-4 rounded-sm placeholder:text-text dark:placeholder:text-text-dark focus:placeholder-transparent focus:outline-none "
                                 onChange={(e: any) => setEmail(e.target.value)}
                             />
                         </div>
                         <div className="w-full py-2">
                             <button
                                 onClick={handleAction}
-                                className=" mt-4 w-full p-2 text-2xl text-gray-200 border rounded-4xl bg-blue-600 flex justify-center ">
+                                className="mt-4 w-full p-2 text-2xl border rounded-md bg-blue-600 flex justify-center">
                                 Enviar
                             </button>
 
                             {showPopup && (
-                                <div className="fixed bottom-5 right-5 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg">
+                                <div className="fixed bottom-5 right-5 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg">
                                     ✅ Sucesso! verifique seu e-mail!.
                                 </div>
                             )}
@@ -85,6 +85,7 @@ export default function ForgetPassword() {
                         </div>
                     </form>
                 </main>
+                <Footer/>
             </div>
         </>
     )

@@ -2,6 +2,7 @@
 
 import ReCaptchaComponent from "@/app/components/reCaptchaComponent/page";
 import Header from "@/app/components/Header/page";
+import Footer from "../components/Footer/page";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
@@ -115,7 +116,7 @@ import React, { useState } from "react";
           </div>
            <div className="w-full py-2">
             <input
-              placeholder="password"
+              placeholder="Password"
               type="password"
               name="password"
               className="w-full border border-gray-600 p-4 rounded-sm focus:placeholder-transparent focus:outline-none"
@@ -124,7 +125,7 @@ import React, { useState } from "react";
           </div>
           <div className="w-full py-2">
             <input
-              placeholder="password"
+              placeholder="Password"
               type="password"
               name="password"
               className="w-full border border-gray-600 p-4 rounded-sm focus:placeholder-transparent focus:outline-none"
@@ -139,7 +140,7 @@ import React, { useState } from "react";
           </div>
            
           <div className="w-full py-2">
-            <button className="mt-6 w-full p-2 text-2xl text-gray-200 border rounded-4xl bg-blue-400 flex justify-center">
+            <button className="mt-6 w-full p-2 text-2xl text-gray-200 border rounded-md bg-blue-600 flex justify-center">
               Criar
             </button>
           </div>
@@ -156,6 +157,7 @@ import React, { useState } from "react";
             </form>
           </main>
          </div>
+        <Footer/>
     </div>
     </>
     ) 

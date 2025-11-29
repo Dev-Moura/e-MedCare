@@ -75,7 +75,7 @@ export default function Home() {
                             placeholder="Login"
                             type="text"
                             name="name"
-                            className="w-full border border-gray-600 p-4 rounded-sm placeholder:text-text placeholder:text-text-dark focus:placeholder-transparent focus:outline-none"
+                            className="w-full border border-gray-600 p-4 rounded-sm focus:placeholder-transparent focus:outline-none"
                             onChange={(e) => setLogin(e.target.value)}
                         />
                     </div>
@@ -84,7 +84,7 @@ export default function Home() {
                             placeholder="Password"
                             name="password"
                             type="password"
-                            className="mt-2 w-full border border-gray-600 p-4 rounded-sm  placeholder:text-text placeholder:text-text-dark focus:placeholder-transparent focus:outline-none"
+                            className="mt-2 w-full border border-gray-600 p-4 rounded-sm focus:placeholder-transparent focus:outline-none"
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
@@ -93,7 +93,7 @@ export default function Home() {
                          onVerify={setCaptchaToken} 
                          onExpired={() => setCaptchaToken(null)}
                          />
-                        <button type="submit" className=" mt-6 w-full p-2 text-2xl border border-gray-700 rounded flex justify-center ">
+                        <button type="submit" className=" mt-6 w-full p-2 text-2xl bg-blue-600 border border-gray-600 rounded flex justify-center ">
                             Login
                         </button>
                         <a href= "./forgetPassword" className="mt-6 flex justify-center ">Esqueceu a senha?</a>

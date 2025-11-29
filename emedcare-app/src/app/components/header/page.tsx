@@ -1,6 +1,14 @@
+
+"use client";
+
 import React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+
+  const pathname = usePathname();
+  const isHome = pathname === "/home"
   return (
     <header className="bg-background dark:bg-bg-full text-text dark:text-text-dark border-b border-gray-700">
       <div className="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between">
@@ -18,8 +26,16 @@ export default function Header() {
           <a href="#services" className="hover:text-blue-600">Serviços</a>
           <a href="#doctors" className="hover:text-blue-600">Profissionais</a>
           <a href="#contact" className="hover:text-blue-600">Contato</a>
-          <a href="./login" className="px-4 py-2 bg-blue-600 rounded-md shadow-sm">Login</a>
+          {!isHome && (
+            <Link
+            href="/login"
+            className="px-4 py-2 bg-blue-600 rounded-md shadow-sm hover:bg-blue-700 transition"
+              >
+              Login
+            </Link>
+          )}
         </nav>
+          {/* <a href="./login" className=" hidden: px-4 py-2 bg-blue-600 rounded-md shadow-sm">Login</a> */}
 
         <div className="md:hidden">
           <button aria-label="abrir menu" className="p-2">

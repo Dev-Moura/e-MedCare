@@ -2,11 +2,12 @@
 
 import React from "react";
 import Link from "next/link";
-
+import Footer from "../components/Footer/page";
+import Header from "../components/Header/page";
 export default function Home() {
   return (
     <>
-      <header></header>
+      <Header/>
       <h1>Home</h1>
       <main>
           <Link href="/doctor/create">Create new doctor</Link>
@@ -23,7 +24,7 @@ export default function Home() {
           <br />
           <Link href="/api">Acess FakeApi</Link>
       </main>
-      <footer></footer>
+      <Footer/>
     </>
   );
 }
