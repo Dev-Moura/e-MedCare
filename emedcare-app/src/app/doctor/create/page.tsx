@@ -1,5 +1,6 @@
+<<<<<<< HEAD
 "use client";
-import ReCaptchaComponent from "@/app/components/reCaptchaComponent/page";
+import ReCaptchaComponent from "@/app/components/ReCaptchaComponent/page";
 import Header from "@/app/components/Header/page";
 import Footer from "@/app/components/Footer/page";
 import Link from "next/link";
@@ -174,6 +175,28 @@ export default function DoctorCreate() {
          </div>
         <Footer/>
     </div>
+=======
+"use client"
+
+import React from "react"
+
+
+export default function page()
+{
+
+  return (
+    <>
+
+  
+<div className="
+  bg-(--color-background)
+  text-[--color-text]
+  dark:bg-[--color-background-dark]
+  dark:text-[--color-text-dark]
+">
+  Testando o tema
+</div>  
+>>>>>>> front-end
     </>
-  );
-}
+  )
+} 

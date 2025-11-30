@@ -8,6 +8,7 @@ export default function Doctors() {
   ];
 
   return (
+<<<<<<< HEAD
     <section id="doctors" className="mt-12">
       <h3 className="text-2xl font-bold">Nossa equipe</h3>
       <p className="text-gray-600 mt-2">Profissionais qualificados e acolhedores.</p>
@@ -15,6 +16,15 @@ export default function Doctors() {
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
         {docs.map((d) => (
           <div key={d.name} className="bg-white p-4 rounded-lg shadow flex flex-col items-center text-center">
+=======
+    <section id="doctors" className="mt-12 bg-background dark:bg-background-dark text-text dark:text-text-dark p-6 rounded-lg">
+      <h3 className="text-2xl font-bold">Nossa equipe</h3>
+      <p className="text-gray-500 mt-2">Profissionais qualificados e acolhedores.</p>
+
+      <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {docs.map((d) => (
+          <div key={d.name} className=" p-4 rounded-lg shadow flex flex-col items-center text-center">
+>>>>>>> front-end
             <img src={d.img} alt={d.name} className="w-28 h-28 rounded-full object-cover" />
             <div className="mt-3 font-semibold">{d.name}</div>
             <div className="text-sm text-gray-500">{d.specialty}</div>

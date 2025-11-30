@@ -11,7 +11,11 @@ export default function QuickActions() {
 
   function ActionCard({ title, desc, icon }) {
   return (
+<<<<<<< HEAD
     <div className="bg-white p-4 rounded-lg shadow flex items-center gap-4">
+=======
+    <div className="bg-background dark:bg-background-dark text-text dark:text-text-dark p-4 rounded-lg shadow flex items-center gap-4">
+>>>>>>> front-end
       <div className="text-3xl">{icon}</div>
       <div>
         <div className="font-semibold">{title}</div>
