@@ -9,15 +9,6 @@ export default function Services() {
   ];
 
   return (
-<<<<<<< HEAD
-    <section id="services" className="mt-12">
-      <h3 className="text-2xl font-bold">Nossos serviços</h3>
-      <p className="text-gray-600 mt-2">Atendimento multidisciplinar com foco na qualidade de vida.</p>
-
-      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {services.map((s) => (
-          <div key={s.title} className="bg-white p-4 rounded-lg shadow hover:shadow-md transition">
-=======
     <section id="services" className=" bg-background dark:bg-background-dark text-text dark:text-text-dark mt-12 p-6 rounded-lg">
       <h3 className="text-2xl font-bold">Nossos serviços</h3>
       <p className="text-gray-500 mt-2">Atendimento multidisciplinar com foco na qualidade de vida.</p>
@@ -25,7 +16,6 @@ export default function Services() {
       <div className=" mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 ">
         {services.map((s) => (
           <div key={s.title} className=" p-4 rounded-lg shadow hover:shadow-md transition">
->>>>>>> front-end
             <div className="text-xl font-semibold">{s.title}</div>
             <div className="text-sm text-gray-500 mt-2">{s.desc}</div>
             <div className="mt-4">

@@ -61,16 +61,6 @@ export default function Home() {
 
   return (
     <>
-<<<<<<< HEAD
-    <div className="min-h-screen flex flex-col">
-     <Header/>
-        <main className="w-full h-full flex flex-1 justify-center items-center h-screen" >
-                <form
-                    className="w-full max-w-sm p-10 bg-white rounded-lg shadow-2xl "
-                    onSubmit={authenticantion}
-                >
-                    <h1 className="font-bold py-6 block text-4xl text-gray-700  ">Entrar</h1>
-=======
     <div className="min-h-screen flex flex-col bg-background dark:bg-bg-full text-text dark:text-text-dark">
      <Header/>
         <main className="w-full h-screen flex flex-1 justify-center items-center " >
@@ -80,17 +70,12 @@ export default function Home() {
                     onSubmit={authenticantion}
                 >
                     <h1 className=" font-bold py-6 block text-4xl ">Entrar</h1>
->>>>>>> front-end
                     <div className="w-full py-2">
                         <input
                             placeholder="Login"
                             type="text"
                             name="name"
-<<<<<<< HEAD
-                            className="w-full border-1 border-gray-600 p-4 rounded-sm placeholder-gray-700 focus:placeholder-transparent focus:outline-none"
-=======
                             className="w-full border border-gray-600 p-4 rounded-sm focus:placeholder-transparent focus:outline-none"
->>>>>>> front-end
                             onChange={(e) => setLogin(e.target.value)}
                         />
                     </div>
@@ -99,35 +84,20 @@ export default function Home() {
                             placeholder="Password"
                             name="password"
                             type="password"
-<<<<<<< HEAD
-                            className="mt-2 w-full border-1 border-gray-600 p-4 rounded-sm placeholder-gray-700 focus:placeholder-transparent focus:outline-none"
-=======
                             className="mt-2 w-full border border-gray-600 p-4 rounded-sm focus:placeholder-transparent focus:outline-none"
->>>>>>> front-end
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
                     <div className="w-full py-2">
-<<<<<<< HEAD
-                        <a href="./CreatePacient" className="flex mt-2 text-black-700  w-2/3" >Paciente? Crie sua conta</a>
-=======
->>>>>>> front-end
                         <ReCaptchaComponent
                          onVerify={setCaptchaToken} 
                          onExpired={() => setCaptchaToken(null)}
                          />
-<<<<<<< HEAD
-                        <button type="submit" className=" mt-6 w-full p-2 text-2xl text-gray-200 border rounded-4xl bg-blue-400 flex justify-center ">
-                            Login
-                        </button>
-                        <a href= "./forgetPassword" className="mt-6 flex justify-center  text-black-700">Esqueceu a senha?</a>
-=======
                         <button type="submit" className=" mt-6 w-full p-2 text-2xl bg-blue-600 border border-gray-600 rounded flex justify-center ">
                             Login
                         </button>
                         <a href= "./forgetPassword" className="mt-6 flex justify-center ">Esqueceu a senha?</a>
                         <a href="./CreatePacient" className="text-text dark:text-text-dark flex justify-center mt-2 " >Crie sua conta</a>
->>>>>>> front-end
                     </div>
                     <div>
                         {error && (
@@ -145,8 +115,4 @@ export default function Home() {
       </div>
     </>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> front-end

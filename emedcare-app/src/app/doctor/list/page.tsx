@@ -95,7 +95,7 @@ export default function DoctorList() {
       <div>
         {error && (
           <div
-            className="p-2 text-white border-gray-200 border-[1px] rounded-sm bg-red-400"
+            className="p-2 text-white border-gray-200 border rounded-sm bg-red-400"
             style={{ color: "red" }}
           >
             {error}

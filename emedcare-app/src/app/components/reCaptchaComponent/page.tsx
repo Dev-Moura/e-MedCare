@@ -8,16 +8,11 @@ const ReCaptchaComponent = ({ onVerify, onExpired }) => {
     console.error("⚠️ reCAPTCHA site key absent! Verify your .env");
   }
   return (
-<<<<<<< HEAD
-    <div className="mt-6">
-      <ReCAPTCHA sitekey={SITE_KEY} onChange={onVerify} onExpired={onExpired} />
-=======
     <div className="mt-6 flex justify-center">
       <ReCAPTCHA 
         sitekey={SITE_KEY} 
         onChange={onVerify} 
         onExpired={onExpired} />
->>>>>>> front-end
     </div>
   );
 };
