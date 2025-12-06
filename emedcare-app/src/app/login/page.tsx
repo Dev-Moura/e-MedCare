@@ -3,7 +3,7 @@
 import axios from "axios";
 import Header from "../components/Header/page";
 import Footer from "../components/Footer/page";
-import ReCaptchaComponent from "../components/ReCaptchaComponent/page";
+import ReCaptchaComponent from "../components/reCaptchaComponent/page";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 

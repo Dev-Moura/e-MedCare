@@ -1,6 +1,6 @@
 "use client";
 
-import ReCaptchaComponent from "@/app/components/ReCaptchaComponent/page";
+import ReCaptchaComponent from "../components/reCaptchaComponent/page";
 import Header from "@/app/components/Header/page";
 import Footer from "../components/Footer/page";
 import { useRouter } from "next/navigation";
